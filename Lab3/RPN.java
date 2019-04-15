@@ -1,5 +1,3 @@
-package RPNcalculator;
-
 import java.util.Scanner;
 import java.util.Stack;
 
@@ -7,7 +5,7 @@ public class RPN {
 	public static void main(String args[]) 
 	 { 
 		// Creating an empty Stack 
-	     Stack<Double> Stack = new Stack<Double>(); 
+	     ownStack Stack = new ownStack(); 
 	     System.out.println("Input integer or operator");
 	     while(true) {
 		     Scanner sc = new Scanner(System.in);
