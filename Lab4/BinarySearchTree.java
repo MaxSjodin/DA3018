@@ -67,22 +67,37 @@ public class BinarySearchTree {
 	     return(find(root, courseCode)); 
 	}
 	private BSTNode find(BSTNode node, String courseCode) { 
-        if(node.getCourseCode().compareTo(courseCode) < 0) { 
-            if(node.getLeftChild() == null){
-                return(node);
-            }
-            return(find(node.getLeftChild(), courseCode)); 
-        }
-        else if(node.getCourseCode().compareTo(courseCode) > 0) {
+        if(node.getCourseCode().compareTo(courseCode) < 0) {
             if(node.getRightChild() == null){
                 return(node);
             }
-            return(find(node.getRightChild(), courseCode)); 
+            else{
+                return(find(node.getRightChild(), courseCode)); 
+            }    
+        }
+        else if(node.getCourseCode().compareTo(courseCode) > 0) { 
+            if(node.getLeftChild() == null){
+                return(node);
+            }
+            else{
+                return(find(node.getLeftChild(), courseCode)); 
+            }    
+        }
+        else{
+            return(node);
+        }    
+    }
+	
+	public BSTNode remove(String courseCode){
+        return(remove(find(courseCode)));
+    }
+    private BSTNode remove(BSTNode node){
+        if(node.getLeftChild() == null && node.getRightChild() == null){
+            node = null;
+            return(node);
         }
         return(node);
     }
-	
-	
 	/**
 	 * Nodes in the search tree
 	 * This class should be sufficient for the project.

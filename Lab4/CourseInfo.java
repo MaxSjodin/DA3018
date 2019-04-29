@@ -19,7 +19,12 @@ public class CourseInfo {
 		//else {
         //    System.out.printf("The course DOESN'T EXISTS in the database.\n");
 		//}
-		String name = courses.find("MM2001").getCourseName();
+		String name = courses.find("DA9999").getCourseName();
+		System.out.printf("Name: %s\n", name);
+		
+		courses.remove("DA9999");
+		
+		name = courses.find("DA9999").getCourseName();
 		System.out.printf("Name: %s\n", name);
 	}
 
